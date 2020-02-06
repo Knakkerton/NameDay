@@ -49,7 +49,7 @@ namespace NameDay
                 DateTime dateTime = DateTime.UtcNow.Date;
                 date = dateTime.ToString("d.M.");
             }
-
+            //Get all the people who have name day
             List<Person> celebrators = dataReader.GetNameDayPeople(date, filepath);
 
             Console.WriteLine($"The following people have name day in {date}:");
