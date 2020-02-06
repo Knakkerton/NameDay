@@ -9,7 +9,7 @@ namespace NameDayLibrary
 {
     public class ArgumentValidation
     {
-        public string ValidateDate(string date)
+        public static string ValidateDate(string date)
         {
             DateTime dateTime = DateTime.ParseExact(date, "d.M.", CultureInfo.InvariantCulture);
             date = dateTime.ToString("d.M.");

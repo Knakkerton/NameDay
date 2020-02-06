@@ -12,37 +12,52 @@ namespace NameDay
     {
         static void Main(string[] args)
         {
-            string filename = "nimet.csvsdfsfsfsd";
+            string filename = "nimet.csv";
             string filepath = Path.Combine(Environment.CurrentDirectory, @"datafiles\", filename);
             DataReader dataReader = new DataReader();
-            ArgumentValidation argumentValidation = new ArgumentValidation();
+            
 
-            //string date;
-            string date = "30.11.";
+            // --- Configurability of file names ---
+            //Bring filename or path as an argument
+            //if(args[1] != null && args[1].Length > 0)
+            //{
+            //    filename = args[1];
+            //    //Or
+            //    filepath = args[1];
+            //}
+            //Or
+            //Read filename or path from txt.file
+            //filepath = GetFileLines();
+            //etc...
+            // --- Configurability of file names ---
+
+            string date;
 
             //Check that date argument that has been received is valid
             try
             {
-                //date = args[0];
-                date = argumentValidation.ValidateDate(date);
+                date = ArgumentValidation.ValidateDate(args[0]);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Couldn't recognize date.");
-                Console.WriteLine("Try giving it in dd.mm. format.");
+                Console.WriteLine("Try giving it in dd.mm. format next time.");
+                Console.WriteLine("For now let's continue and see if there's any people who have name day today.");
                 Console.WriteLine("Press any key.");
                 Console.ReadLine();
-                throw new ArgumentException("Couldn't recognize date");
+
+                DateTime dateTime = DateTime.UtcNow.Date;
+                date = dateTime.ToString("d.M.");
             }
 
-            
             List<Person> celebrators = dataReader.GetNameDayPeople(date, filepath);
 
             Console.WriteLine($"The following people have name day in {date}:");
-
+            int i = 0;
             foreach (Person p in celebrators)
             {
-                Console.WriteLine($"{p.Name}");
+                i++;
+                Console.WriteLine($"{i}. {p.Name}");
             }
 
             Console.ReadLine();

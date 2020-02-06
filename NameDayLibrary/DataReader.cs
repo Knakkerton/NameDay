@@ -9,6 +9,9 @@ namespace NameDayLibrary
 {
     public class DataReader
     {
+        /// <summary>
+        /// Get people who have name day at chosen date
+        /// </summary>
         public List<Person> GetNameDayPeople(string date, string filepath)
         {
             List<Person> people = new List<Person>();
@@ -17,24 +20,26 @@ namespace NameDayLibrary
 
             foreach (string l in lines)
             {
-                Console.WriteLine(l);
                 string[] entries = l.Split(';');
 
                 if (entries[0] == date)
                 {
-                    Person _person = new Person()
+                    Person person = new Person()
                     {
                         Date = entries[0],
                         Name = entries[1]
                     };
 
-                    people.Add(_person);
+                    people.Add(person);
                 }
             }
 
 
             return people;
         }
+        /// <summary>
+        /// Get list of strings based on lines in file that contains data
+        /// </summary>
         public List<string> GetFileLines(string filepath)
         {
             List<string> lines = new List<string>();
@@ -45,8 +50,13 @@ namespace NameDayLibrary
             }
             catch (Exception ex)
             {
+                //Log
+                throw new FileNotFoundException(ex.Message);
 
-                throw;
+                //Not really sure what is preferred method here since i can't actually "handle" this exception
+                //Console.writeline here and tell user that filepath is wrong?
+                //Bounce exception back to program.cs and Console.writeline there?
+                //Just Log and shut program down?
             }
 
             return lines;
