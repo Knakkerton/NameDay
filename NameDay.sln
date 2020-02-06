@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameDay", "NameDay\NameDay.csproj", "{C9B8B632-F982-42F8-88FF-71500A502DF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameDayLibrary", "NameDayLibrary\NameDayLibrary.csproj", "{56E25E18-9C6B-4587-AEC8-FFA703127E13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9B8B632-F982-42F8-88FF-71500A502DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9B8B632-F982-42F8-88FF-71500A502DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9B8B632-F982-42F8-88FF-71500A502DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B8B632-F982-42F8-88FF-71500A502DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56E25E18-9C6B-4587-AEC8-FFA703127E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56E25E18-9C6B-4587-AEC8-FFA703127E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56E25E18-9C6B-4587-AEC8-FFA703127E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56E25E18-9C6B-4587-AEC8-FFA703127E13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18D5975F-6CD8-4F8C-864E-92F3348EC9CE}
+	EndGlobalSection
+EndGlobal
